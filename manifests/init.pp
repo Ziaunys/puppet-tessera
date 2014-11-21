@@ -165,6 +165,12 @@ class tessera(
     owner      => $tessera_user,
   }
 
+  python::pip { 'psycopg2':
+    pkgname    =>  'psycopg2',
+    virtualenv => $app_root,
+    owner      => $tessera_user,
+  }
+
   python::pip { 'gunicorn':
     ensure     => '0.14.5',
     pkgname    =>  'gunicorn',
